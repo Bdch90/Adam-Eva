@@ -1,0 +1,78 @@
+<html>
+<head>
+    <title>Adam và Eva</title>
+</head>
+<body>
+<script>
+    var Apple = function (weight) {
+
+        this.weight = weight;
+        this.decrease = function ()
+        {
+            this.weight -=1;
+        };
+        this.getAppleInfo = function ()
+        {
+            return this.weight;
+        };
+        this.isEmpty = function ()
+        {
+            if (this.weight == 0 )
+            {
+                alert('this apple is empty');
+            };
+        };
+    }
+    function Human(name,sex,weight) 
+    {
+        this.name = name;
+        this.sex = sex;
+        this.weight = weight;
+
+        this.eat = function () 
+        {
+            this.weight +=1;
+        };
+        this.say = function () 
+        {
+            console.log('Hello i\'m ' + this.name);
+        };
+        this.getName = function () 
+        {
+            return this.name;
+        };
+        this.getWeight = function () 
+        {
+            return this.weight;
+        };
+        this.setWeight = function (weight) 
+        {
+            this.weight = weight;
+        };
+    };
+
+    var apple1 = new Apple(10);
+    ;
+    var Adam = new Human('adam','male',60);
+    var Eva = new Human('eva','female',50);
+    var appleWeight = apple1.getAppleInfo();
+    
+        for(let i=1;i <=appleWeight; i++)
+        {
+            if(i%2==0)
+            {
+                Adam.eat();
+                apple1.decrease();
+                document.write(Adam.name +' has ate a pieace of apple1 , his weight : ' +Adam.getWeight()+'<br>');
+            }
+            else
+            {
+                Eva.eat();
+                apple1.decrease();
+                document.write(Eva.name +' has ate a pieace of apple1 , her weight : ' +Eva.getWeight()+'<br>');
+            }
+        }
+    apple1.isEmpty();
+</script>
+</body>
+</html>
